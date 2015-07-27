@@ -3,8 +3,8 @@
  * The template for displaying featured content
  *
  * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * @subpackage Capoeira Science Theme
+ * @since Capoeira Science Theme 0.0
  */
 ?>
 
@@ -14,7 +14,7 @@
 		/**
 		 * Fires before the Twenty Fourteen featured content.
 		 *
-		 * @since Twenty Fourteen 1.0
+		 * @since Capoeira Science Theme 0.0
 		 */
 		do_action( 'twentyfourteen_featured_posts_before' );
 
@@ -29,7 +29,7 @@
 		/**
 		 * Fires after the Twenty Fourteen featured content.
 		 *
-		 * @since Twenty Fourteen 1.0
+		 * @since Capoeira Science Theme 0.0
 		 */
 		do_action( 'twentyfourteen_featured_posts_after' );
 

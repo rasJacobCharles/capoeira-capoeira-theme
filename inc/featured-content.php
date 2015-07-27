@@ -21,7 +21,7 @@ class Featured_Content {
 	 *
 	 * @see Featured_Content::init()
 	 *
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @static
 	 * @access public
@@ -36,7 +36,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 */
 	public static function setup() {
 		add_action( 'init', array( __CLASS__, 'init' ), 30 );
@@ -53,7 +53,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 */
 	public static function init() {
 		$theme_support = get_theme_support( 'featured-content' );
@@ -102,7 +102,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 */
 	public static function wp_loaded() {
 		if ( self::get_setting( 'hide-tag' ) ) {
@@ -116,7 +116,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @return array Array of featured posts.
 	 */
@@ -146,7 +146,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @return array Array of post IDs.
 	 */
@@ -191,7 +191,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @return array Array of sticky posts.
 	 */
@@ -208,7 +208,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 */
 	public static function delete_transient() {
 		delete_transient( 'featured_content_ids' );
@@ -223,7 +223,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param WP_Query $query WP_Query object.
 	 * @return WP_Query Possibly-modified WP_Query.
@@ -271,7 +271,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param int $tag_id The term_id of the tag that has been deleted.
 	 */
@@ -294,7 +294,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param array $terms      List of term objects. This is the return value of get_terms().
 	 * @param array $taxonomies An array of taxonomy slugs.
@@ -342,7 +342,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param array $terms    A list of term objects. This is the return value of get_the_terms().
 	 * @param int   $id       The ID field for the post object that terms are associated with.
@@ -383,7 +383,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 */
 	public static function register_setting() {
 		register_setting( 'featured-content', 'featured-content', array( __CLASS__, 'validate_settings' ) );
@@ -394,7 +394,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param WP_Customize_Manager $wp_customize Customizer object.
 	 */
@@ -440,7 +440,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 */
 	public static function enqueue_scripts() {
 		wp_enqueue_script( 'featured-content-suggest', get_template_directory_uri() . '/js/featured-content-admin.js', array( 'jquery', 'suggest' ), '20131022', true );
@@ -460,7 +460,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param string $key The key of a recognized setting.
 	 * @return mixed Array of all settings by default. A single value if passed as first parameter.
@@ -493,7 +493,7 @@ class Featured_Content {
 	 *
 	 * @static
 	 * @access public
-	 * @since Twenty Fourteen 1.0
+	 * @since Capoeira Science Theme 0.0
 	 *
 	 * @param array $input Array of settings input.
 	 * @return array Validated settings output.

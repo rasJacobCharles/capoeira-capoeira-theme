@@ -7,8 +7,8 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * @subpackage Capoeira Science Theme
+ * @since Capoeira Science Theme 0.0
  */
 
 get_header(); ?>

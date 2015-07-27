@@ -3,8 +3,8 @@
  * The Content Sidebar
  *
  * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * @subpackage Capoeira Science Theme
+ * @since Capoeira Science Theme 0.0
  */
 
 if ( ! is_active_sidebar( 'sidebar-2' ) ) {
