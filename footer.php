@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Capoeira Science Theme
- * @since Capoeira Science Theme 0.0
+ * @since Capoeira Science Theme 0.01
  */
 ?>
 
