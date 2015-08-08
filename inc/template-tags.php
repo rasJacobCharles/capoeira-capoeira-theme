@@ -7,7 +7,7 @@
  * @since Capoeira Science Theme 0.0
  */
 
-if ( ! function_exists( 'twentyfourteen_paging_nav' ) ) :
+if ( ! function_exists( 'capoeiratheme_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
@@ -16,7 +16,7 @@ if ( ! function_exists( 'twentyfourteen_paging_nav' ) ) :
  * @global WP_Query   $wp_query   WordPress Query object.
  * @global WP_Rewrite $wp_rewrite WordPress Rewrite object.
  */
-function twentyfourteen_paging_nav() {
+function capoeiratheme_paging_nav() {
 	global $wp_query, $wp_rewrite;
 
 	// Don't print empty markup if there's only one page.
@@ -47,15 +47,15 @@ function twentyfourteen_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 1,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '&larr; Previous', 'twentyfourteen' ),
-		'next_text' => __( 'Next &rarr;', 'twentyfourteen' ),
+		'prev_text' => __( '&larr; Previous', 'capoeiratheme' ),
+		'next_text' => __( 'Next &rarr;', 'capoeiratheme' ),
 	) );
 
 	if ( $links ) :
 
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'twentyfourteen' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'capoeiratheme' ); ?></h1>
 		<div class="pagination loop-pagination">
 			<?php echo $links; ?>
 		</div><!-- .pagination -->
@@ -65,13 +65,13 @@ function twentyfourteen_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'twentyfourteen_post_nav' ) ) :
+if ( ! function_exists( 'capoeiratheme_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @since Capoeira Science Theme 0.0
  */
-function twentyfourteen_post_nav() {
+function capoeiratheme_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -82,14 +82,14 @@ function twentyfourteen_post_nav() {
 
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'twentyfourteen' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'capoeiratheme' ); ?></h1>
 		<div class="nav-links">
 			<?php
 			if ( is_attachment() ) :
-				previous_post_link( '%link', __( '<span class="meta-nav">Published In</span>%title', 'twentyfourteen' ) );
+				previous_post_link( '%link', __( '<span class="meta-nav">Published In</span>%title', 'capoeiratheme' ) );
 			else :
-				previous_post_link( '%link', __( '<span class="meta-nav">Previous Post</span>%title', 'twentyfourteen' ) );
-				next_post_link( '%link', __( '<span class="meta-nav">Next Post</span>%title', 'twentyfourteen' ) );
+				previous_post_link( '%link', __( '<span class="meta-nav">Previous Post</span>%title', 'capoeiratheme' ) );
+				next_post_link( '%link', __( '<span class="meta-nav">Next Post</span>%title', 'capoeiratheme' ) );
 			endif;
 			?>
 		</div><!-- .nav-links -->
@@ -98,15 +98,15 @@ function twentyfourteen_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'twentyfourteen_posted_on' ) ) :
+if ( ! function_exists( 'capoeiratheme_posted_on' ) ) :
 /**
  * Print HTML with meta information for the current post-date/time and author.
  *
  * @since Capoeira Science Theme 0.0
  */
-function twentyfourteen_posted_on() {
+function capoeiratheme_posted_on() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		echo '<span class="featured-post">' . __( 'Sticky', 'twentyfourteen' ) . '</span>';
+		echo '<span class="featured-post">' . __( 'Sticky', 'capoeiratheme' ) . '</span>';
 	}
 
 	// Set up and print post meta information.
@@ -127,8 +127,8 @@ endif;
  *
  * @return boolean true if blog has more than 1 category
  */
-function twentyfourteen_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'twentyfourteen_category_count' ) ) ) {
+function capoeiratheme_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'capoeiratheme_category_count' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
@@ -137,31 +137,31 @@ function twentyfourteen_categorized_blog() {
 		// Count the number of categories that are attached to the posts
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'twentyfourteen_category_count', $all_the_cool_cats );
+		set_transient( 'capoeiratheme_category_count', $all_the_cool_cats );
 	}
 
 	if ( 1 !== (int) $all_the_cool_cats ) {
-		// This blog has more than 1 category so twentyfourteen_categorized_blog should return true
+		// This blog has more than 1 category so capoeiratheme_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so twentyfourteen_categorized_blog should return false
+		// This blog has only 1 category so capoeiratheme_categorized_blog should return false
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in twentyfourteen_categorized_blog.
+ * Flush out the transients used in capoeiratheme_categorized_blog.
  *
  * @since Capoeira Science Theme 0.0
  */
-function twentyfourteen_category_transient_flusher() {
+function capoeiratheme_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'twentyfourteen_category_count' );
+	delete_transient( 'capoeiratheme_category_count' );
 }
-add_action( 'edit_category', 'twentyfourteen_category_transient_flusher' );
-add_action( 'save_post',     'twentyfourteen_category_transient_flusher' );
+add_action( 'edit_category', 'capoeiratheme_category_transient_flusher' );
+add_action( 'save_post',     'capoeiratheme_category_transient_flusher' );
 
-if ( ! function_exists( 'twentyfourteen_post_thumbnail' ) ) :
+if ( ! function_exists( 'capoeiratheme_post_thumbnail' ) ) :
 /**
  * Display an optional post thumbnail.
  *
@@ -171,7 +171,7 @@ if ( ! function_exists( 'twentyfourteen_post_thumbnail' ) ) :
  * @since Capoeira Science Theme 0.0
  * @since Twenty Fourteen 1.4 Was made 'pluggable', or overridable.
  */
-function twentyfourteen_post_thumbnail() {
+function capoeiratheme_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -182,7 +182,7 @@ function twentyfourteen_post_thumbnail() {
 	<div class="post-thumbnail">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'twentyfourteen-full-width' );
+			the_post_thumbnail( 'capoeiratheme-full-width' );
 		} else {
 			the_post_thumbnail();
 		}
@@ -194,7 +194,7 @@ function twentyfourteen_post_thumbnail() {
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'twentyfourteen-full-width' );
+			the_post_thumbnail( 'capoeiratheme-full-width' );
 		} else {
 			the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
 		}
@@ -205,7 +205,7 @@ function twentyfourteen_post_thumbnail() {
 }
 endif;
 
-if ( ! function_exists( 'twentyfourteen_excerpt_more' ) && ! is_admin() ) :
+if ( ! function_exists( 'capoeiratheme_excerpt_more' ) && ! is_admin() ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ...
  * and a Continue reading link.
@@ -215,13 +215,13 @@ if ( ! function_exists( 'twentyfourteen_excerpt_more' ) && ! is_admin() ) :
  * @param string $more Default Read More excerpt link.
  * @return string Filtered Read More excerpt link.
  */
-function twentyfourteen_excerpt_more( $more ) {
+function capoeiratheme_excerpt_more( $more ) {
 	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+			sprintf( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'capoeiratheme' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
 		);
 	return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', 'twentyfourteen_excerpt_more' );
+add_filter( 'excerpt_more', 'capoeiratheme_excerpt_more' );
 endif;

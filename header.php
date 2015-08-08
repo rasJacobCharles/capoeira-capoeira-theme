@@ -17,51 +17,172 @@
 <![endif]-->
 <!--[if !(IE 7) & !(IE 8)]><!-->
 <html <?php language_attributes(); ?>>
-<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
-<!--<![endif]-->
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-	<?php wp_head(); ?>
-</head>
+    <!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+        <!--<![endif]-->
+        <head>
+            <meta charset="<?php bloginfo('charset'); ?>">
+            <meta name="viewport" content="width=device-width">
+            <title><?php wp_title('|', true, 'right'); ?></title>
+            <link rel="profile" href="http://gmpg.org/xfn/11">
+            <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+            <!--[if lt IE 9]>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+            <![endif]-->
+            <?php wp_head(); ?>
+        </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<?php if ( get_header_image() ) : ?>
-	<div id="site-header">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-		</a>
-	</div>
-	<?php endif; ?>
+        <body id="page-top" data-offset="90" data-target=".navigation" data-spy="scroll" <?php body_class(); ?>>
+            <div id="page" class="wrapper hide-main-content">
+                <section  class="page boxing-page home-v2">
+                    <!--Menu Mobile-->
+                    <div class="menu-wrap">
+                        <div class="main-menu">
+                            <h4 class="title-menu">Main menu</h4>
+                            <button class="close-button" id="close-button"><i class="fa fa-times"></i></button>
+                        </div>
+<?php wp_nav_menu(array('theme_location'  => '',
+	'menu'            => '',
+	'container'       => 'nav',
+	'container_class' => '',
+	'container_id'    => '',
+	'menu_class'      => 'menu',
+	'menu_id'         => '',
+	'echo'            => true,
+	'fallback_cb'     => 'wp_page_menu',
+	'before'          => '',
+	'after'           => '',
+	'link_before'     => '',
+	'link_after'      => '',
+	'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+	'depth'           => 0,
+	'walker'          => '')); ?>
+                            </div>
+                        <!--Menu Mobile-->
+                        <div class="content-wrapper">
+                        <!--Header-->
+				<header id="header" class="header header-container alt reveal">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2 col-sm-3 col-xs-3 logo">
+								<a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt=""/></a>
+							</div>
+                                                    <div class="col-md-9 nav-container">
+                                                        <nav class="megamenu collapse navbar-collapse bs-navbar-collapse navbar-right mainnav col-md-10" role="navigation">
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                                        </nav>
+                                                    </div>
+                                                    <button class="menu-button" id="open-button"></button>
+						</div>
+					</div>
+				</header>
+                        <section class="slide-container to-top">
+					<div class="ms-fullscreen-template" id="slider1-wrapper">
+						<!-- masterslider -->
+						<div class="master-slider ms-skin-default" id="masterslider-index">
+							<div class="ms-slide slide-1" data-delay="0">
+								<div class="slide-pattern"></div>
+								<video data-autopause="false" data-mute="true" data-loop="true" data-fill-mode="fill">
+									<source src="<?php echo get_template_directory_uri(); ?>/images/video/demo.mp4" type="video/mp4"/>
+								</video>
+								<h3 class="ms-layer hps-title1" style="left:101px"
+									data-type="text"
+									data-ease="easeOutExpo"
+									data-delay="1000"
+									data-duration="0"
+									data-effect="skewleft(30,80)"
+								>
+									Athlete Fitness Club
+								</h3>
+								<h3 class="ms-layer hps-title3" style="left:95px"
+									data-type="text"
+									data-delay="1900"
+									data-duration="0"
+									data-effect="rotate3dtop(-100,0,0,40,t)"
+									data-ease="easeOutExpo"
+								>
+									Make You Be The Fighter
+								</h3>
 
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
-			</div>
+								<h3 class="ms-layer hps-title4" style="left:101px"
+									data-type="text"
+									data-delay="2500"
+									data-duration="0"
+									data-effect="rotate3dtop(-100,0,0,18,t)"
+									data-ease="easeOutExpo"
+								>
+									Try A Free Class
+								</h3>
+							</div>
+							<div class="ms-slide slide-2" data-delay="0">
+							   <div class="slide-pattern"></div>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/blank.gif" data-src="<?php echo get_template_directory_uri(); ?>/images/bg_1.jpg" alt="lorem ipsum dolor sit"/>
+								<h3 class="ms-layer hps-title1" style="left:101px"
+									data-type="text"
+									data-ease="easeOutExpo"
+									data-delay="1000"
+									data-duration="0"
+									data-effect="skewleft(30,80)">
+									Athlete Fitness Club
+								</h3>
+								<h3 class="ms-layer hps-title3" style="left:95px"
+									data-type="text"
+									data-delay="1900"
+									data-duration="0"
+									data-effect="rotate3dtop(-100,0,0,40,t)"
+									data-ease="easeOutExpo"
+								>
+									Make You Be The Fighter
+								</h3>
 
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav>
-		</div>
+								<h3 class="ms-layer hps-title4" style="left:101px"
+									data-type="text"
+									data-delay="2500"
+									data-duration="0"
+									data-effect="rotate3dtop(-100,0,0,18,t)"
+									data-ease="easeOutExpo"
+								>
+									Try A Free Class
+								</h3>
+							</div>
 
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-				<?php get_search_form(); ?>
-			</div>
-		</div>
-	</header><!-- #masthead -->
+							<div class="ms-slide slide-3" data-delay="0">
+							   <div class="slide-pattern"></div>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/blank.gif" data-src="<?php echo get_template_directory_uri(); ?>/images/bg-home-v2.jpg" alt="lorem ipsum dolor sit"/>
+								<h3 class="ms-layer hps-title1" style="left:101px"
+									data-type="text"
+									data-ease="easeOutExpo"
+									data-delay="1000"
+									data-duration="0"
+									data-effect="skewleft(30,80)"
+								>
+									Athlete Fitness Club
+								</h3>
+								<h3 class="ms-layer hps-title3" style="left:95px"
+									data-type="text"
+									data-delay="1900"
+									data-duration="0"
+									data-effect="rotate3dtop(-100,0,0,40,t)"
+									data-ease="easeOutExpo"
+								>
+									Make You Be The Fighter
+								</h3>
 
-	<div id="main" class="site-main">
+								<h3 class="ms-layer hps-title4" style="left:101px"
+									data-type="text"
+									data-delay="2500"
+									data-duration="0"
+									data-effect="rotate3dtop(-100,0,0,18,t)"
+									data-ease="easeOutExpo"
+								>
+									Try A Free Class
+								</h3>
+							</div>
+						</div>
+						<!-- end of masterslider -->
+						<div class="to-bottom" id="to-bottom"><i class="fa fa-angle-down"></i></div>
+					</div>
+				</section>
+                        <!--End Banner-->
+				<div class="contents-main" id="contents-main">
+                    

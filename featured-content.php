@@ -16,9 +16,9 @@
 		 *
 		 * @since Capoeira Science Theme 0.0
 		 */
-		do_action( 'twentyfourteen_featured_posts_before' );
+		do_action( 'capoeiratheme_featured_posts_before' );
 
-		$featured_posts = twentyfourteen_get_featured_posts();
+		$featured_posts = capoeiratheme_get_featured_posts();
 		foreach ( (array) $featured_posts as $order => $post ) :
 			setup_postdata( $post );
 
@@ -31,7 +31,7 @@
 		 *
 		 * @since Capoeira Science Theme 0.0
 		 */
-		do_action( 'twentyfourteen_featured_posts_after' );
+		do_action( 'capoeiratheme_featured_posts_after' );
 
 		wp_reset_postdata();
 	?>
