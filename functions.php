@@ -36,7 +36,7 @@ if (!isset($content_width)) {
 }
 
 /**
- * Twenty Fourteen only works in WordPress 3.6 or later.
+ * Capoeira Theme only works in WordPress 3.6 or later.
  */
 if (version_compare($GLOBALS['wp_version'], '3.6', '<')) {
     require get_template_directory() . '/inc/back-compat.php';
@@ -45,7 +45,7 @@ if (version_compare($GLOBALS['wp_version'], '3.6', '<')) {
 if (!function_exists('capoeiratheme_setup')) :
 
     /**
-     * Twenty Fourteen setup.
+     * Capoeira Theme setup.
      *
      * Set up theme defaults and registers support for various WordPress features.
      *
@@ -59,10 +59,10 @@ if (!function_exists('capoeiratheme_setup')) :
     {
 
         /*
-         * Make Twenty Fourteen available for translation.
+         * Make Capoeira Theme available for translation.
          *
          * Translations can be added to the /languages/ directory.
-         * If you're building a theme based on Twenty Fourteen, use a find and
+         * If you're building a theme based on Capoeira Theme, use a find and
          * replace to change 'capoeiratheme' to the name of your theme in all
          * template files.
          */
@@ -141,7 +141,7 @@ add_action('template_redirect', 'capoeiratheme_content_width');
 function capoeiratheme_get_featured_posts()
 {
     /**
-     * Filter the featured posts to return in Twenty Fourteen.
+     * Filter the featured posts to return in Capoeira Theme.
      *
      * @since Capoeira Science Theme 0.0
      *
@@ -163,7 +163,7 @@ function capoeiratheme_has_featured_posts()
 }
 
 /**
- * Register three Twenty Fourteen widget areas.
+ * Register three Capoeira Theme widget areas.
  *
  * @since Capoeira Science Theme 0.0
  */
@@ -203,7 +203,7 @@ function capoeiratheme_widgets_init()
 add_action('widgets_init', 'capoeiratheme_widgets_init');
 
 /**
- * Register Lato Google font for Twenty Fourteen.
+ * Register Lato Google font for Capoeira Theme.
  *
  * @since Capoeira Science Theme 0.0
  *
@@ -293,7 +293,7 @@ if (!function_exists('capoeiratheme_the_attached_image')) :
     {
         $post = get_post();
         /**
-         * Filter the default Twenty Fourteen attachment size.
+         * Filter the default Capoeira Theme attachment size.
          *
          * @since Capoeira Science Theme 0.0
          *
